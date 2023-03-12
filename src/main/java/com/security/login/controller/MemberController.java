@@ -19,10 +19,6 @@ public class MemberController {
 
     private final MemberService memberService;
 
-    /**
-     * 회원가입 API
-     * @return
-     */
     @PostMapping("/join")
     public ResponseEntity<String> createUser(@RequestBody MemberRequestDto member) throws CustomException {
         memberService.join(member);
@@ -30,10 +26,6 @@ public class MemberController {
         return new ResponseEntity<>("Success", HttpStatus.OK);
     }
 
-    /**
-     * 로그인 API
-     * @return
-     */
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody MemberRequestDto member) {
         String email = member.getEmail();

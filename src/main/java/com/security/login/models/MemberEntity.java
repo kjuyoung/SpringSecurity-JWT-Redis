@@ -30,7 +30,6 @@ public class MemberEntity implements UserDetails {
 //    private String accountId;
 //    private boolean quitYn;
 
-    //    @JsonIgnore
     @Column(nullable = false)
     private String password;
 
