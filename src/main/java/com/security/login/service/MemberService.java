@@ -48,7 +48,7 @@ public class MemberService {
     @Transactional
     public TokenInfo login(MemberRequestDto memberRequestDto) throws CustomException {
 
-        if(memberRepository.existsByEmail(memberRequestDto.getEmail())) {
+        if(!memberRepository.existsByEmail(memberRequestDto.getEmail())) {
             throw new CustomException("해당하는 유저가 존재하지 않습니다.");
         }
 
